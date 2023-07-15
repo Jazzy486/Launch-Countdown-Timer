@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+:root{
+    --color1: hsl(345, 95%, 68%);
+    --color2: hsl(234, 17%, 12%);
+    --color3: hsl(235, 16%, 14%);
+}
+
+body{
+    background: url("../images/pattern-hills.svg"), url("../images/bg-stars.svg") var(--color3);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    z-index: -1;
+    height: 100vh;
+}
+
+.main{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.timer{
+    display: flex;
+    gap: 40px;
+}
+
+.main h1{
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    font-size: 2rem;
+    word-spacing: 0.6rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 5%;
+}
+
+
+.cards{
+    
+    width: 180px;
+    height: 180px;
+}
+
+.subtext p{
+    margin-top : 16%;    
+    text-align: center;
+    color: hsl(237, 18%, 59%);
+    font-weight: 500;
+    letter-spacing: 0.3em;
+}
+
+.cards .upper-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    background-color:  hsl(236, 21%, 26%);
+    border-radius: 10px;
+    overflow: hidden;   
+    
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotateX(-90deg);
+
+    }
+    
+    50%{
+        transform: rotate(0deg);
+    }
+    
+    100%{
+        transform: rotateX(90deg);
+    }
+}
+
+.upper-card h2{
+    color: var(--color1);
+    font-size: 5rem;
+    margin-bottom: -50%;
+    
+}
+
+.cards .lower-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    background-color:hsl(235, 19%, 35%);
+    border-radius: 10px;
+    overflow: hidden;   
+}
+
+.lower-card h2{
+    color: var(--color1);
+    font-size: 5rem;
+    margin-top: -50%;
+}
+
+
+.countdown {
+    perspective: 1000px;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    animation: rotate 1s infinite;
+  }
+
+
+.socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 7%;
+}
+
+svg:hover .path{
+    transition: .4s;
+    fill: var(--color1);
+}
+
+.attribution{
+margin-top: 6%;
+font-size: 14px;
+font-weight: 500;
+word-spacing: 0.2rem;
+text-align: center;
+color: hsl(237, 18%, 59%);
+}
+
+.attribution a{
+    color: hsl(345, 95%, 68%);
+    text-decoration: none;
+}
+  
+
+@media screen and (max-width: 768px){
+    .cards{
+        width: 70px;
+        height: 70px;
+    }
+
+    .timer{
+        gap: 10px;
+    }
+
+    .main h1{
+        font-size: 0.5rem;
+        word-spacing: 0.3rem;
+    }
+   
+    .upper-card h2{
+        font-size: 2rem;
+    }
+
+    .lower-card h2{
+        font-size: 2rem;
+    }
+
+    .subtext p{
+        margin-top : 10%;    
+        font-size: 10px;
+    }
+    .main h1{
+        font-size: 1.5rem;
+        margin-bottom: 15%;
+    }
+
+    .socials{
+        margin-top: 40%;
+    }
+
+    .attribution{
+        font-size: 12px;
+        margin-top: 58%;
+    }
+  }
